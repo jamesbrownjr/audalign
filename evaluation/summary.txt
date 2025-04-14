@@ -1,0 +1,74 @@
+AUDALIGN ALIGNMENT EVALUATION
+================================================================================
+
+Configuration Performance by Comparison Type:
+Comparison     Config  Bins                           Method  Avg Error (ms)  Avg Time (s)
+   backing    default    84            CorrelationRecognizer      289.000000      4.227500
+   backing    default    84 CorrelationSpectrogramRecognizer      139.560000      5.632500
+   backing    default    84            FingerprintRecognizer      277.390000     24.652500
+   backing higher_res    96            CorrelationRecognizer      289.000000      4.232500
+   backing higher_res    96 CorrelationSpectrogramRecognizer      139.560000      5.672500
+   backing higher_res    96            FingerprintRecognizer      277.390000     24.997500
+   backing  lower_res    48            CorrelationRecognizer      289.000000      4.207500
+   backing  lower_res    48 CorrelationSpectrogramRecognizer      139.560000      5.617500
+   backing  lower_res    48            FingerprintRecognizer      277.390000     24.732500
+    master    default    84            CorrelationRecognizer      213.583333      5.281667
+    master    default    84 CorrelationSpectrogramRecognizer      245.500000      7.110000
+    master    default    84            FingerprintRecognizer      272.273333     31.445000
+    master higher_res    96            CorrelationRecognizer      213.583333      5.270000
+    master higher_res    96 CorrelationSpectrogramRecognizer      245.500000      7.010000
+    master higher_res    96            FingerprintRecognizer      272.273333     31.965000
+    master  lower_res    48            CorrelationRecognizer      213.583333      5.256667
+    master  lower_res    48 CorrelationSpectrogramRecognizer      245.500000      7.028333
+    master  lower_res    48            FingerprintRecognizer      272.273333     31.761667
+  original    default    84            CorrelationRecognizer      245.500000      5.296667
+  original    default    84 CorrelationSpectrogramRecognizer      245.500000      7.375000
+  original    default    84            FingerprintRecognizer      245.500000     27.808333
+  original higher_res    96            CorrelationRecognizer      245.500000      6.260000
+  original higher_res    96 CorrelationSpectrogramRecognizer      245.500000      8.590000
+  original higher_res    96            FingerprintRecognizer      245.500000     28.585000
+  original  lower_res    48            CorrelationRecognizer      245.500000      6.216667
+  original  lower_res    48 CorrelationSpectrogramRecognizer      245.500000      8.756667
+  original  lower_res    48            FingerprintRecognizer      245.500000     33.438333
+
+Best Method For Each File and Comparison Type:
+            offset_file comparison_type  true_offset best_config                      best_method  abs_error  processing_time
+  bass_offset_350ms.wav          master        350.0     default            FingerprintRecognizer     303.56            23.01
+  bass_offset_350ms.wav        original        350.0     default            FingerprintRecognizer     350.00            17.28
+  bass_offset_350ms.wav         backing        350.0     default CorrelationSpectrogramRecognizer      71.36             5.48
+vocals_offset_206ms.wav          master        206.0     default            FingerprintRecognizer     206.00            27.97
+vocals_offset_206ms.wav        original        206.0     default            FingerprintRecognizer     206.00            27.90
+vocals_offset_206ms.wav         backing        206.0     default CorrelationSpectrogramRecognizer      26.20             5.70
+ drums_offset_264ms.wav          master        264.0     default            FingerprintRecognizer     264.00            24.96
+ drums_offset_264ms.wav        original        264.0     default            FingerprintRecognizer     264.00            22.10
+ drums_offset_264ms.wav         backing        264.0     default CorrelationSpectrogramRecognizer     124.68             5.56
+guitar_offset_336ms.wav          master        336.0     default            FingerprintRecognizer     336.00            25.58
+guitar_offset_336ms.wav        original        336.0     default            FingerprintRecognizer     336.00            22.50
+guitar_offset_336ms.wav         backing        336.0     default            FingerprintRecognizer     336.00            25.58
+  user1_offset_59ms.wav          master         59.0     default CorrelationSpectrogramRecognizer      59.00             5.91
+  user1_offset_59ms.wav        original         59.0     default            FingerprintRecognizer      59.00            22.79
+ user2_offset_258ms.wav          master        258.0     default            CorrelationRecognizer      66.25            10.26
+ user2_offset_258ms.wav        original        258.0     default            FingerprintRecognizer     258.00            54.28
+
+Overall Best Configuration by Comparison Type:
+
+  Comparison: backing
+  Config: default
+  Bins: 84
+  Method: CorrelationSpectrogramRecognizer
+  Avg Error: 139.56 ms
+  Avg Time: 5.63 seconds
+
+  Comparison: master
+  Config: default
+  Bins: 84
+  Method: CorrelationRecognizer
+  Avg Error: 213.58 ms
+  Avg Time: 5.28 seconds
+
+  Comparison: original
+  Config: default
+  Bins: 84
+  Method: CorrelationRecognizer
+  Avg Error: 245.50 ms
+  Avg Time: 5.30 seconds

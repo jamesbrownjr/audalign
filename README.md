@@ -110,6 +110,30 @@ fine_results = ad.fine_align(
 
 Correlation is more precise than fingerprints and will always give a best alignment unlike fingerprinting, which can return no alignment. `max_lags` is very important for fine aligning. `locality` can be very useful for all alignments and recognitions.
 
+## Evaluation and Benchmarking
+
+The `evaluation` folder contains tools to evaluate and benchmark different alignment methods:
+
+```python
+# Run the comprehensive batch alignment report on all offset files
+python evaluation/batch_align_report.py
+```
+
+The batch alignment script runs multiple alignment methods against audio files with known offsets and produces:
+- A CSV report with detailed results for each test configuration
+- A summary file with comparative performance metrics
+- Analysis of which methods work best for different comparison types
+
+This provides valuable insight into which alignment method is most accurate for your specific audio characteristics. Key metrics include:
+- Mean Absolute Error (MAE) in milliseconds
+- Processing time for each method
+- Performance across different configuration settings
+
+The evaluation results show that different alignment methods have varying effectiveness depending on your comparison scenario:
+- When comparing against backing tracks, CorrelationSpectrogramRecognizer often performs best
+- For master and original file comparisons, CorrelationRecognizer typically provides the best balance of accuracy and speed
+- FingerprintRecognizer can work well in some situations but tends to have higher error rates
+
 ## Other Functions
 
 ```python
